@@ -69,8 +69,18 @@ const lightbox = new SimpleLightbox('.gallery-item a', {
   captionDelay: 250,
 });
 
-searchButtn.addEventListener('click', event => {
-  event.preventDefault();
+searchButtn.addEventListener('click', () => {
+  performSearch();
+});
+
+window.addEventListener('keydown', event => {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    performSearch();
+  }
+});
+
+function performSearch() {
   options.q = document.querySelector('#input-field').value.trim();
   loader.style.display = 'flex';
   const queryStr = new URLSearchParams(options).toString();
@@ -79,7 +89,7 @@ searchButtn.addEventListener('click', event => {
   fetchImages(apiUrl)
     .then(images => renderGallery(images))
     .catch(error => console.error(error));
-});
+}
 
 function fetchImages(apiUrl) {
   return fetch(apiUrl).then(response => {
