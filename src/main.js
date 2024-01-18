@@ -19,7 +19,7 @@ iziToast.settings({
   icon: '',
   iconText: '',
   iconColor: '',
-  iconUrl: '.. ./src/img/bi_x-octagon-2.svg',
+  iconUrl: './img/bi_x-octagon-2.svg',
   image: '',
   imageWidth: 50,
 
