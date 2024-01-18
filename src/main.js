@@ -1,8 +1,10 @@
 import iziToast from 'izitoast';
 import SimpleLightbox from 'simplelightbox';
+import octagonIcon from './img/bi_x-octagon-2.svg';
 const gallery = document.querySelector('.gallery-wrapper');
 const searchButtn = document.querySelector('.search-button');
 const loader = document.querySelector('.loader-position');
+
 iziToast.settings({
   timeout: 5000,
   theme: 'light',
@@ -19,7 +21,7 @@ iziToast.settings({
   icon: '',
   iconText: '',
   iconColor: '',
-  iconUrl: './img/bi_x-octagon-2.svg',
+  iconUrl: octagonIcon,
   image: '',
   imageWidth: 50,
 
